@@ -7,4 +7,4 @@ A simple web application to display the following analytics from a tweet file me
 - [ ] Top 5 active usernames
 
 ### Screenshot
-![Screeshot of the app](screen_shot.png?raw=true)
+![screen_shot](https://github.com/ayyappa-swamy/tweet-analytics/assets/12974425/ed2b12b1-d6d8-4c7f-9a6d-530e798e0c61)
