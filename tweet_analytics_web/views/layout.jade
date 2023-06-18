@@ -5,3 +5,23 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+      h1 Top Retweets
+      .tweets_list
+        each tweet, i in top_retweets
+          .tweet_card
+            p.date Posted On: #{tweet.date}
+            p.id ID: #{tweet.id}
+            p.content Content: #{tweet.content}
+            p.username Posted By: #{tweet.username}
+            p.like_count Likes Count: #{tweet.like_count}
+            p.retweet_count Retweets Count: #{tweet.retweet_count}
+      h1 Top Likes
+      .tweets_list
+        each tweet, i in top_likes
+          .tweet_card
+            p.date Posted On: #{tweet.date}
+            p.id ID: #{tweet.id}
+            p.content Content: #{tweet.content}
+            p.username Posted By: #{tweet.username}
+            p.like_count Likes Count: #{tweet.like_count}
+            p.retweet_count Retweets Count: #{tweet.retweet_count}

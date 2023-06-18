@@ -1,10 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
-const path = require('path')
 const multer = require('multer')
-const fs = require('fs')
-const { parse } = require('csv-parse')
 
 const { Tweets } = require('./tweets.js')
 
@@ -25,7 +21,10 @@ router.post('/tweet_file_upload', upload.single('tweets'), function (req, res, n
     },
     function(stats) {
       console.log("finished")
-      res.send("Most retweeted text: " + stats.most_retweeted + "; count: " + stats.max_retweet_count.toString())
+      // res.send("Most retweeted text: " + stats.most_retweeted + "; count: " + stats.max_retweet_count.toString())
+      // res.header("Content-Type",'application/json');
+      // res.send(JSON.stringify(stats, null, 4));
+      res.render('layout', stats)
     } 
   );
 })
