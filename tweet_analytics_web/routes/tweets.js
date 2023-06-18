@@ -2,17 +2,6 @@ const fs = require('fs')
 const { parse } = require('csv-parse')
 const Heap = require('heap')
 
-class Tweet {
-    constructor(tweet_row) {
-        this.date = tweet_row[0]
-        this.id = tweet_row[1]
-        this.content = tweet_row[2]
-        this.username = tweet_row[3]
-        this.likes_count = tweet_row[4]
-        this.retweet_count = tweet_row[5]
-    }
-}
-
 class Tweets {
     constructor(tweets_file_path) {
         this.file_path = tweets_file_path;
@@ -22,7 +11,7 @@ class Tweets {
         })
 
         this.likesHeap = new Heap(function(a, b) {
-            return a.likes_count - b.likes_count;
+            return a.like_count - b.like_count;
         })
     }
 

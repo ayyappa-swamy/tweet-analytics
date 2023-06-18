@@ -6,3 +6,40 @@ body {
 a {
   color: #00B7FF;
 }
+
+h1 {
+  text-align: center;
+}
+
+.tweet_card {
+  width: 600px;
+  border: 1px solid #ccc;
+  margin: auto;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+}
+
+p {
+  margin: 10px;
+}
+
+p.username {
+  color: gray;
+  font-weight: bold;
+}
+
+p.content {
+  font: message-box;
+  font-family: system-ui;
+  font-size: larger;
+}
+
+p.like_count {
+  float: right;
+}
+
+p.retweet_count {
+  display: inline-block;
+}

@@ -5,23 +5,25 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
-      h1 Top Retweets
+      mixin tweet-card(tweet)
+        .tweet_card
+          p.username @#{tweet.username}
+          p.content #{tweet.content}
+          p.date #{tweet.date}
+          .stats
+            p.retweet_count 
+              strong #{tweet.retweet_count} 
+              | Retweets
+            p.like_count 
+              strong #{tweet.like_count} 
+              | Likes
+
+      h1 Top 5 Retweeted Tweets
       .tweets_list
         each tweet, i in top_retweets
-          .tweet_card
-            p.date Posted On: #{tweet.date}
-            p.id ID: #{tweet.id}
-            p.content Content: #{tweet.content}
-            p.username Posted By: #{tweet.username}
-            p.like_count Likes Count: #{tweet.like_count}
-            p.retweet_count Retweets Count: #{tweet.retweet_count}
-      h1 Top Likes
+          +tweet-card(tweet)
+          
+      h1 Top 5 liked tweets
       .tweets_list
         each tweet, i in top_likes
-          .tweet_card
-            p.date Posted On: #{tweet.date}
-            p.id ID: #{tweet.id}
-            p.content Content: #{tweet.content}
-            p.username Posted By: #{tweet.username}
-            p.like_count Likes Count: #{tweet.like_count}
-            p.retweet_count Retweets Count: #{tweet.retweet_count}
+          +tweet-card(tweet)
