@@ -8,7 +8,7 @@ const upload = multer({ dest: 'uploads/'})
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Tweet Analytics' });
 });
 
 router.post('/tweet_file_upload', upload.single('tweets'), function (req, res, next) {
@@ -20,11 +20,7 @@ router.post('/tweet_file_upload', upload.single('tweets'), function (req, res, n
       console.log(error.message)
     },
     function(stats) {
-      console.log("finished")
-      // res.send("Most retweeted text: " + stats.most_retweeted + "; count: " + stats.max_retweet_count.toString())
-      // res.header("Content-Type",'application/json');
-      // res.send(JSON.stringify(stats, null, 4));
-      res.render('layout', stats)
+      res.render('tweets_data', stats)
     } 
   );
 })

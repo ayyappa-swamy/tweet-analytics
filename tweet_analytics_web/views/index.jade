@@ -3,6 +3,8 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  form(action="/tweet_file_upload", method="post", enctype="multipart/form-data")
-    input(type="file", name="tweets")
-    input(type="submit", value="Submit")
+  form(id="tweet_file_form", method="post", enctype="multipart/form-data")
+    input(id="btn_tweet_file_choose", type="file", name="tweets")
+    input(id="btn_tweet_submit", type="submit", value="Submit")
+  #stats_result
+    d

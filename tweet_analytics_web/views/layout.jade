@@ -3,27 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://code.jquery.com/jquery-3.7.0.min.js')
+    script(src='/js/display_stats.js')
   body
     block content
-      mixin tweet-card(tweet)
-        .tweet_card
-          p.username @#{tweet.username}
-          p.content #{tweet.content}
-          p.date #{tweet.date}
-          .stats
-            p.retweet_count 
-              strong #{tweet.retweet_count} 
-              | Retweets
-            p.like_count 
-              strong #{tweet.like_count} 
-              | Likes
-
-      h1 Top 5 Retweeted Tweets
-      .tweets_list
-        each tweet, i in top_retweets
-          +tweet-card(tweet)
-          
-      h1 Top 5 liked tweets
-      .tweets_list
-        each tweet, i in top_likes
-          +tweet-card(tweet)
