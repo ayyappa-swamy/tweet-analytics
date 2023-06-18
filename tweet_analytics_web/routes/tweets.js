@@ -5,14 +5,9 @@ const Heap = require('heap')
 class Tweets {
     constructor(tweets_file_path) {
         this.file_path = tweets_file_path;
-        
-        this.retweetsHeap = new Heap(function(a, b) {
-            return a.retweet_count - b.retweet_count;
-        })
 
-        this.likesHeap = new Heap(function(a, b) {
-            return a.like_count - b.like_count;
-        })
+        this.retweetsHeap = new Heap((a, b) => a.retweet_count - b.retweet_count)
+        this.likesHeap = new Heap((a, b) => a.like_count - b.like_count)
     }
 
     analyzeRow(tweet_row) {
@@ -49,8 +44,8 @@ class Tweets {
         }.bind(this))
         .on("end", function() {
             var stats = {
-                top_retweets: this.retweetsHeap.toArray(),
-                top_likes: this.likesHeap.toArray()
+                top_retweets: this.retweetsHeap.toArray().sort((a, b) => b.retweet_count - a.retweet_count),
+                top_likes: this.likesHeap.toArray().sort((a, b) => b.like_count - a.like_count)
             };
             // console.log(JSON.stringify(stats, null, 4));
             end_cb(stats);
