@@ -5,3 +5,6 @@ A simple web application to display the following analytics from a tweet file me
 - [x] Top 5 liked tweets
 - [ ] Top 5 hastags
 - [ ] Top 5 active usernames
+
+### Screenshot
+![Screeshot of the app](screen_shot.png?raw=true)
