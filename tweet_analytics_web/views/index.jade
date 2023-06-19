@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1= title
+  h1.center_text= title
   .upload_div
     form(id="tweet_file_form", method="post", enctype="multipart/form-data")
       input(id="btn_tweet_file_choose", type="file", name="tweets")

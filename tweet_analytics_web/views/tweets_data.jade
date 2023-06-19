@@ -11,12 +11,12 @@ mixin tweet-card(tweet)
         strong #{tweet.like_count} 
         | Likes
 
-h1 Top 5 Retweeted Tweets
+h1.center_text Top 5 retweeted tweets
 .tweets_list
   each tweet, i in top_retweets
     +tweet-card(tweet)
     
-h1 Top 5 liked tweets
+h1.center_text Top 5 liked tweets
 .tweets_list
   each tweet, i in top_likes
     +tweet-card(tweet)

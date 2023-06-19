@@ -6,7 +6,7 @@ $(document).ready(function () {
         var data = new FormData(form);
 
         $(".upload_div *").prop("disabled", true);
-        $(".stats_result").html("<h1>Processing the tweet file ...</h1>");
+        $(".stats_result").html("<h3 class='center_text'>Processing the tweet file ...</h1>");
 
         $.ajax({
             type: "POST",

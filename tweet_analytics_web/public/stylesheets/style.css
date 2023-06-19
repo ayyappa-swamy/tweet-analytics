@@ -1,13 +1,15 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 700px;
+  margin: auto;
 }
 
 a {
   color: #00B7FF;
 }
 
-h1 {
+.center_text {
   text-align: center;
 }
 
