@@ -11,6 +11,11 @@ h1 {
   text-align: center;
 }
 
+.upload_div {
+  margin: auto;
+  width: fit-content;
+}
+
 .tweet_card {
   width: 600px;
   border: 1px solid #ccc;
